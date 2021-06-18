@@ -2,7 +2,7 @@
 #include<string>
 #include<conio.h>
 #include<fstream>
-#include<stdlib.h>
+//#include<stdlib.h>
 #include<windows.h>
 using namespace std;
 class STUDENT
@@ -40,8 +40,9 @@ void STUDENT::display()
  cout<<"\n\t\t\t\tSTUDENT BIO DATA\n";
  cout<<"\n\tNAME : ";
  cout<< name;
-  cout<<"\n\tADMISSIN NO : "<<an;
+ cout<<"\n\tADMISSIN NO : "<<an;
  cout<<"\n\tCONTACT NUMBER : "<<contact;
+ cout<<"\n\tDOB : "<<dob;
  cout<<"\n\tAGE: "<<age;
 
 
@@ -204,7 +205,7 @@ int main()
                  p[ano].putinfo();
                  p[ano].putaddress();
                  p[ano].academic_out();
-                 Sleep(5000);
+                 Sleep(10000);
                  system("cls");
                 break;
         case 3: cout<<"Enter Admission No.: ";
@@ -317,7 +318,7 @@ int main()
         default: cout<<"\nInvalid Choice";
     }
 
-    }while(c<5);
+    }while(c!=0);
 
 
  return 0;
