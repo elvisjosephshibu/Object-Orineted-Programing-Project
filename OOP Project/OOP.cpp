@@ -176,7 +176,7 @@ int main()
     int c,ano,d;
     academic p[1000];
     do{
-    abc:cout<<"\n\n1.Enter Student Details\n2.Display Student Details\n3.Delete Student Details\n4.Update Details\n5.Exit Program";
+    cout<<"\n\n1.Enter Student Details\n2.Display Student Details\n3.Delete Student Details\n4.Update Details\n5.Exit Program";
     cout<<"\nEnter ur choice";
     cin>>c;
 
@@ -192,8 +192,13 @@ int main()
                 p[ano].academic_in();
                 system("cls");
             break;
-        case 2:  cout<<"\nEnter Roll No.: ";
+        case 2:  cout<<"\nEnter Admission No.: ";
                  cin>>ano;
+                 if(p[ano].an!=ano)
+        		{
+                  cout<<"\nNo record Found";
+                  break;
+        		}
                  system("cls");
                  p[ano].display();
                  p[ano].putinfo();
@@ -202,8 +207,9 @@ int main()
                  Sleep(5000);
                  system("cls");
                 break;
-        case 3: cout<<"Enter Roll No.: ";
+        case 3: cout<<"Enter Admission No.: ";
                 cin>>ano;
+                system("cls");
                 p[ano].name=p[ano].dlt(p[ano].name);
                 p[ano].age=p[ano].dlt(p[ano].age);
                 p[ano].an=p[ano].dlt(p[ano].an);
@@ -227,12 +233,14 @@ int main()
                 Sleep(2000);
                 system("cls");
             break;
-        case 4: bcd:cout<<"\nEnter Roll No.: ";
+        case 4: cout<<"\nEnter Admission No.: ";
         		cin>>ano;
         		if(p[ano].an!=ano)
         		{
                   cout<<"\nNo record Found";
-                  goto bcd;
+                  Sleep(2000);
+                  system("cls");
+                  break;
         		}
         		cout<<"\n\n1 Update Name\n2 Update Age\n3 Update Date of Birth\n4 Update Contact Number\n5 Update Father's Name\n6 Update Mother's Name\n7 Update Father's Contact Number\n8 Update Mother's Contact Number\n9 Update Father's Occupation\n10 Update Mother's Occupation\n11 Update House Name\n12 Update Post\n13 Update City\n14 Update District\n15 Update Pin Number\n16 Update 10th Mark\n17 Update 12th Mark\n18 Update Department\n19 Go to the main Screen";
         		cout<<"\nEnter your Choice";
@@ -297,16 +305,16 @@ int main()
                             cout<<"\nThe Record is Updated";
                             Sleep(2000);
                             system("cls");
-                            goto abc;
                         break;
 					default: cout<<"\nInvalid Choice";
 
 				}
+				Sleep(2000);
+                system("cls");
             break;
         case 5 :exit(0);
                 break;
         default: cout<<"\nInvalid Choice";
-                 //goto abc;
     }
 
     }while(c<5);
